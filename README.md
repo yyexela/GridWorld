@@ -4,10 +4,32 @@
 
 Fork and clone the [GridWorld repo](http://github.com/mvhs-apcs/GridWorld).
 
-Create a branch for Part 1:
-```
-$ git checkout -b part1
-```
+## Branches
+
+The code is organized into packages so creating a branch for each Part is not required (but recommended).
+
+If you choose to create a branch for each part, follow these steps:
+
+1. Create and checkout a new branch
+    ```
+    $ git checkout -b part#
+    ```
+2. Make commits for significant code changes
+3. When finished with the entire Part, merge the changes back to `master`.
+    ```
+    $ git checkout master
+    $ git merge part#
+    ```
+4. It is now safe to delete the `part#` branch.
+    ```
+    $ git branch -d part#
+    ```
+5. Push changes to github
+    ```
+    $ git push
+    ```
+
+## Instructions
 
 Read instructions for Part 1 in `Grid World Student Manual.pdf`. You have also have `GridWorld Appendices.pdf` for quick API reference.
 
@@ -17,26 +39,7 @@ Make commits to this branch as you complete the steps outlined in the activity.
 
 ## Submitting
 
-Commit all local changes, then (replace # with the current activity number):
+Commit all local changes, then:
 ```
-$ git push origin part#
-```
-
-## Switching to the next activity
-
-The branches for Part 2-5 have not been created yet.
-
-First, create a new branch
-```
-$ git branch part#
-```
-
-Then checkout it out
-```
-$ git checkout part#
-```
-
-Or, you can create and switch with one command with the `-b` shortcut
-```
-$ git checkout -b part#
+$ git push
 ```
