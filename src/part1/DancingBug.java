@@ -20,9 +20,7 @@ public class DancingBug extends Bug{
     }
 
     public void act(){
-        for(int i = 0; i < dance[index]; i++){
-			turn();
-		}
+        for(int i = 0; i < dance[index]; i++) turn();
 		if(canMove()) move();
 		if(index+1 < dance.length) index++;
 		else index = 0;
