@@ -34,7 +34,8 @@ public class DancingBugRunner {
 	public static void main(String[] args) {
 		ActorWorld world = new ActorWorld();
 
-		int[] dance = {1, 2, 3, 4, 5};
+		//int[] dance = {1, 2, 3, 4, 5};
+		int[] dance = {2, 6, 1, 2, 6, 4, 9, 2, 6, 2, 7, 1, 7, 2, 1};
 
 		world.add(new DancingBug(dance));
 		//world.add(new Rock());
