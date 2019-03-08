@@ -17,8 +17,6 @@
  * @author Cay Horstmann
  */
 
-package part4;
-
 import info.gridworld.actor.ActorWorld;
 import info.gridworld.actor.Critter;
 import info.gridworld.actor.Flower;

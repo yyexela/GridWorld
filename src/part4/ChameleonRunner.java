@@ -16,8 +16,6 @@
  * @author Cay Horstmann
  */
 
-package part4;
-
 import info.gridworld.actor.ActorWorld;
 import info.gridworld.actor.Rock;
 import info.gridworld.grid.Location;
