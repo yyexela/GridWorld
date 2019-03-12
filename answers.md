@@ -75,7 +75,7 @@ flower.putSelfInGrid(gr, loc);
 Done :)  
 ## Part 4  
 ### Set 7  
-1) The methods implements in `Critter` are:  
+1) The methods implemented in `Critter` are:  
 `act()`, `getActors()`, `processActors()`, `getMoveLocations()`, `selectMoveLocation()`, `makeMove()`  
 2) All critters make these actions, in order:  
 `getActors()`, `processActors()`, `getMoveLocation()`, `selectMoveLocation()`, and `makeMove()`  
