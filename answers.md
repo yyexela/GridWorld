@@ -98,3 +98,28 @@ Done :)
 5) The similarity is that 'Math.random()' is used in both movements and they both can only move onto an empty grid space. The difference is that crabs can only move horizontally in-line with their bodies whereas critters can move onto any empty adjacent grid space.  
 6) A `CrabCritter` turns instead of moving when the ArrayList returned from `getMoveLocations()` is empty, which causes the super method `selectMoveLocation()` to return the crab's current location, which is then checked for in `makeMove()`, causing a random direction to be chosen for the crab to move to (either left or right 90 degrees).  
 7) The crabs don't eat each other because the `processActors()` method filters out any class which is a `Critter`, which is true of `CrabCritter` which extends `Critter`.  
+## Part 5  
+### Set 10
+1) `isValid()` is specified in the `Grid` interface. The Abstract class `AbstractGrid` and grids `BoundedGrid` and `UnboundedGrid` implement this method. (see Set 10 figure)  
+2) In `AbstractGrid`, the method `getValidAdjacentLocations()` is the only method that calls `isValid()`. The other methods don't call `isValid()` because they call `getValidAdjacentLocations()`.  
+3) In `getNeighbors()`, the methods from the `Grid` interface called are: 
+* `getOccupiedAdjacentLocations(Location loc)`  
+* `get(Location loc)`  
+The classes that implement these methods are `AbstractGrid`, `BoundedGrid`, and `UnboundedGrid` since the `Grid` interface is is the highest parent.  
+4) The `getEmptyAdjacentLocations()` method returns a location when using the `get()` method that returns an object of type `E` because the all the `get()` method is doing is returning an object, if one exists, no matter the type. It doesn't matter what the type is for the `getEmptyAdjacentLocations()` method since it just checks if an object exists at a location, and returns all the empty locations.  
+5) if `Location.HALF_RIGHT` was replaced both times with `Location.RIGHT` in the `getValidAdjacentLocations()` method, it would only return locations that are directly vertical or horizontal to the location being tested, as opposed to including diagonals.  
+## Set 11  
+1) The `BoundedGrid` constructor ensures that there is at least one valid location by throwing an `IllegalArgumentException` when the rows and/or cols are less than or equal to 0.  
+2) `getNumCols()` determines the number of columns by getting the length of the first row (it has to exist due to the constructor).  
+3) For a location to be valid in `BoundedGrid`, the location has to:  
+* have a row greater or equal to 0  
+* have a row less than the amount of rows  
+* have a column greater or equal to 0  
+* have a column less than the number of columns  
+4) An `ArrayList<Location>` is returned in the `getOccupiedLocations()` method. The time complexity is n-squared due to the double for-loop.  
+5) A location is returned by the `get()` method. A parameter of `Location` is needed. Big O will be n, since just if-statements are used (it has linear complexity).  
+6) Th exceptions the `put()` method can throw are:  
+* `IllegalArgumentException`  
+* `NullPointerException`  
+7) The `remove()` method returns generic `E` objects (whatever objects the `Grid` interface contains)  
+8) Yes, since the `BoundedGrid` extends the abstract grid interface, which implements the grid interface, making changes where it is required in order for the grid to be bounded and for all parent methods to still work (by changing the methods where applicable).  
