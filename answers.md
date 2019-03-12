@@ -108,7 +108,7 @@ Done :)
 The classes that implement these methods are `AbstractGrid`, `BoundedGrid`, and `UnboundedGrid` since the `Grid` interface is is the highest parent.  
 4) The `getEmptyAdjacentLocations()` method returns a location when using the `get()` method that returns an object of type `E` because the all the `get()` method is doing is returning an object, if one exists, no matter the type. It doesn't matter what the type is for the `getEmptyAdjacentLocations()` method since it just checks if an object exists at a location, and returns all the empty locations.  
 5) if `Location.HALF_RIGHT` was replaced both times with `Location.RIGHT` in the `getValidAdjacentLocations()` method, it would only return locations that are directly vertical or horizontal to the location being tested, as opposed to including diagonals.  
-## Set 11  
+### Set 11  
 1) The `BoundedGrid` constructor ensures that there is at least one valid location by throwing an `IllegalArgumentException` when the rows and/or cols are less than or equal to 0.  
 2) `getNumCols()` determines the number of columns by getting the length of the first row (it has to exist due to the constructor).  
 3) For a location to be valid in `BoundedGrid`, the location has to:  
